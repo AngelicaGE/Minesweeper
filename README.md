@@ -16,9 +16,12 @@ The following instructions will guide you through the process of getting the pro
 $ git clone https://github.com/AngieGE/Minesweeper.git
 ```
 3. Add a Virtual Host for the proyect 
-  3.1 Start all services on your local server and navigate to your *localhost* inside your favorite browser 
-  3.2 Under Tools > Add a virtual host. I named mine "minesweeper" Filled in the required information and click on "Start the creation of the virtual host"
-  3.3 Restart DNS. You can do this by clicking directly on your Wampp icon. Right click > Tools > Restart DNS
+ 
+3.1 Start all services on your local server and navigate to your *localhost* inside your favorite browser 
+
+3.2 Under Tools > Add a virtual host. I named mine "minesweeper" Filled in the required information and click on "Start the creation of the virtual host"
+
+3.3 Restart DNS. You can do this by clicking directly on your Wampp icon. Right click > Tools > Restart DNS
 
 4. Navigate to your virtual host inside the browser. In my case "minesweeper"
 
