@@ -1,0 +1,214 @@
+body{
+background-image: url("../Sketchy-kitchen-pattern/bg.png");
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.header{
+font-family: 'Baloo Thambi', cursive;
+font-size: 30px;
+}
+/*
+Easy 380 x 380
+cell --> 40 x 40  funct --> (8,8)
+Medium 466 x 466
+cell --> 20 x 20 funct --> (16, 16)
+Hard 700 x 466
+cell -->20 x 20 funct --> (16, 30)
+*/
+.boardEasy{ /*The whole game panel*/
+width: 400px;
+height: 400px;
+max-width: 900px;
+max-height:666px;
+display: flex;
+flex-direction: column;
+}
+.boardMedium{ /*The whole game panel*/
+width: 800px;
+height: 800px;
+max-width: 900px;
+max-height:800px;
+display: flex;
+flex-direction: column;
+}
+.boardHard{ /*The whole game panel*/
+width: 1300px;
+min-height: 900px;
+max-width: 1300px;
+max-height:900px;
+display: flex;
+flex-direction: column;
+}
+
+.levels{
+font-family: 'Baloo Thambi', cursive;
+font-size: 1.2em;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+.levels-item:hover, .click {
+    font-family: 'Baloo Thambi', cursive;
+    color: rgba(71, 26, 26, 1);
+    font-size: 1.3em;
+    cursor: pointer;
+}
+#sound:hover{
+width: 40px;
+cursor: pointer;
+}
+.noclick {
+    font-family: 'Baloo Thambi', cursive;
+    color: black;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.noEvent{
+pointer-events: none;  
+}
+.hud{
+background-color: rgba(145, 229, 60, 1); /*green*/
+}
+.grid{  /*element that has the table*/
+background-color: rgb(231,197,168); /*light pink*/
+}
+.easy{
+  width: 40px;
+  height: 40px;
+  max-height: 20px;
+  margin: 0;
+}
+.medium{
+  width: 40px;
+  height: 30px;
+  max-height: 30px;
+  margin: 0;
+}
+.hard{
+  width: 40px;
+  height: 30px;
+  min-height: 30px;
+  max-height: 40px;
+  margin: 0;
+}
+.notRev{
+  background-color:rgba(255, 120, 24);/*71, 26, 26, 1);*/
+  border-bottom: 4px solid rgba(116, 52, 52, 1);/*wine*/
+  border-right: 4px solid rgba(116, 52, 52, 1);/*wine*/
+  border-top: 1px solid rgba(116, 52, 52, 1);/*light wine*/
+  border-left: 1px solid rgba(116, 52, 52, 1);/*light wine*/
+}
+
+.RevBomb{
+  background-color: rgb(255, 178, 115);
+  border-bottom: 1px solid rgba(116, 52, 52, 1);/*wine*/
+  border-right: 1px solid rgba(116, 52, 52, 1);/*wine*/
+  border-top: 4px solid rgba(116, 52, 52, 1);/*light wine*/
+  border-left: 4px solid rgba(116, 52, 52, 1);/*light wine*/
+}
+.Rev0, .Rev1, .Rev2, .Rev3, .Rev4, .Rev5, .Rev6, .Rev7, .Rev8{
+  background-color: rgba(255, 146, 68);
+  border-bottom: 1px solid rgba(116, 52, 52, 1);/*wine*/
+  border-right: 1px solid rgba(116, 52, 52, 1);/*wine*/
+  border-top: 4px solid rgba(116, 52, 52, 1);/*light wine*/
+  border-left: 4px solid rgba(116, 52, 52, 1);/*light wine*/
+}
+
+.Rev1:before {
+  content: '1';
+  margin-left: 40%;
+  color: blue;
+  font-size: 150%;
+}
+
+.Rev2:before {
+  content: '2';
+  margin-left: 40%;
+  color: green;
+    font-size: 150%;
+
+}
+
+.Rev3:before {
+  content: '3';
+  margin-left: 40%;
+  color: red;
+    font-size: 150%;
+}
+
+.Rev4:before {
+  content: '4';
+    margin-left: 40%;
+    color: purple;
+      font-size: 150%;
+}
+
+.Rev5:before {
+  content: '5';
+    margin-left: 40%;
+      font-size: 150%;
+}
+
+.Rev6:before {
+  content: '6';
+    margin-left: 40%;
+      font-size: 150%;
+}
+
+.Rev7:before {
+  content: '7';
+    margin-left: 40%;
+      font-size: 150%;
+}
+
+.Rev8:before {
+  content: '8';
+    margin-left: 40%;
+      font-size: 150%;
+}
+a{
+color: black;
+}
+footer{
+position:absolute;
+   bottom:0;
+   width:100%;
+   height:30px;
+}
+.flag-hud, .time-hud{
+/*  border: 1px solid red;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+table{
+  width: 100%;
+  height: 100%;
+  font-family: 'Baloo Thambi', cursive;
+}
+td{
+  align-content: center;
+}
+.flag{
+  margin-left: 30%;
+}
+.hidden{
+  visibility: hidden;
+}
+.visible{
+  visibility: visible;
+}
+#welcomeMenu{
+  background-image: url(../media/start.png);
+  width: 100vh;
+}
+#welcomeMenu p{
+z-index: 1;
+border: 1px solid red;
+display: block;
+width: 50%;
+margin-left: auto;
+margin-right: auto;
+}
