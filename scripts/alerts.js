@@ -25,9 +25,9 @@ export default class Alerts{
      document.querySelector("#grid").classList.add("noEvent")          //I dont let user reveal more cells if it has already won   //dont allow user to click 
    }
  
-   printLose(cellsArrBombs, event)
+   printLose(cellsArrBombs, time)
    {
-     this.popFood(cellsArrBombs)                                //Here I make all the fruits appear
+     this.popFood(cellsArrBombs, time)                                //Here I make all the fruits appear
      document.querySelector("#board").classList.add('noEvent'); //dont allow user to click 
    }
 
@@ -122,13 +122,13 @@ export default class Alerts{
     }
    }
 
-  popFood(cellsArrBombs){                                                 //receives the array with all the bombs
+  popFood(cellsArrBombs, time){                                                 //receives the array with all the bombs
       document.querySelector("#board").classList.add("noEvent");          //disallow clicks while the food is popping. Avoids buggs. Like changing level while cells are being revealed
       this.time = setInterval(() =>{
         if(this.i < cellsArrBombs.length){
           this.revealFruit(this.i++, cellsArrBombs, this.getOneFruit());
         }else{
-          this.resetTime();                                                 //If i am done with all my array I set the interval back to zero. 
+          this.resetTime(time);                                                 //If i am done with all my array I set the interval back to zero. 
           document.querySelector("#board").classList.remove("noEvent")
           document.querySelector("#grid").classList.add("noEvent")          //I dont let user reveal more cells if it has already lost
         }
@@ -136,16 +136,16 @@ export default class Alerts{
 
   }
 
-  resetTime(){
+  resetTime(time){
     console.log("reset");
     if( this.time != null){
-       clearInterval(this.time);
-       swal({
+      swal({
         title: "Don´t give up!",
-        text: `Time played ${time}`,
+        text: `Time played ${time} sec.`,
         icon: `warning`,
         button: "Ok!",
       }); 
+      clearInterval(this.time);
     }
   }
 }

@@ -267,7 +267,7 @@ export default class Map {
           this.startGame = this.state[3];
           event.target.classList.add("RevBomb");
           event.target.innerHTML=this.alerts.getOneFruit();
-          this.alerts.printLose(this.cellsArrBombs, event);
+          this.alerts.printLose(this.cellsArrBombs, this.time );
         } else {                                                        //The user revealed a mine without a mine
           let addjacentMines = myEvent.addjacentMine;
           event.target.classList.add("Rev" + addjacentMines);
@@ -307,7 +307,7 @@ checkWin(){
         this.flags++;
         if (myEvent.hasMine==true) {
           if ((++this.flagsInMines) == this.amountMines) {
-            this.alerts.printWin(document.querySelector("timer").innerHTML);
+            this.alerts.printWin(cc);
           }
         }
         event.target.innerHTML = `<img class="flag" data-col="${myEvent.getCol()}" data-row="${myEvent.getRow()}" src="media/flag.png" width="15px" ></img>`;     //add col and row so that i can retrieve them and know which cell was clicked
