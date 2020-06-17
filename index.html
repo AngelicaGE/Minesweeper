@@ -11,42 +11,41 @@
 <body>
 	<div id="welcomeMenu"> <!--Javascript prints menu--> </div>
 	<div id="wholeGame">
-			<div class="header">
-					<p style="text-align:center;">Minesweeper</p>
+		<div class="header">
+			<p style="text-align:center;">Minesweeper</p>
+		</div>
+		<section class="board" id="board">	
+			<element class="hud" style="border-top-right-radius: 20px; border-top-left-radius:20px;">
+				<div class="levels">
+					<span class="levels-item click" id="easy">Easy</span>
+					<span class="levels-item" id="intermediate">Intermediate</span>
+					<span class="levels-item" id="hard">Hard</span>
 				</div>
-				<section class="board" id="board">
+			</element>
+			<element class="hud">
+				<div class="levels" >
+					<span class="flag-hud"><img src="media/flag.png" width="38px" height="38px"> <p id="numberMines"> 010 <!--Will update with js--></p> </span>
+					<span class="time-hud"><img src="media/time.png" width="38px" height="38px"> <p id="timer"> 000 <!--Will update with js--></p>	</span>
+					<span class="sound-hud"><img id="sound" src="media/megaphone.png" width="38px" height="38px"></span>
+				</div>
+			</element>
+			<element class="grid" id="grid">
+				<!--Draw a table on JS-->
+			</element>
+		</section>
 				
-					<element class="hud" style="border-top-right-radius: 20px; border-top-left-radius:20px;">
-						<div class="levels">
-							<span class="levels-item click" id="easy">Easy</span>
-							<span class="levels-item" id="intermediate">Intermediate</span>
-							<span class="levels-item" id="hard">Hard</span>
-						</div>
-					</element>
-					<element class="hud">
-						<div class="levels" >
-						<span class="flag-hud"><img src="media/flag.png" width="38px" height="38px"> <p id="numberMines"> 010 <!--Will update with js--></p> </span>
-						<span class="time-hud"><img src="media/time.png" width="38px" height="38px"> <p id="timer"> 000 <!--Will update with js--></p>	</span>
-						<span class="sound-hud"><img id="sound" src="media/megaphone.png" width="38px" height="38px"></span>
-						</div>
-					</element>
-					<element class="grid" id="grid">
-						<!--Draw a table on JS-->
-					</element>
-				</section>
-				
-					<footer>
-						<a href="https://www.freepik.com/free-photos-vectors/pattern" target="_blank">
-							<strong> Pattern vector created by freepik - www.freepik.com</strong>
-						</a>
-							<strong>
-							Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  title="Flaticon" target="_blank">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-							</strong>
-							<a href="https://www.freepik.es/fotos-vectores-gratis/marco">Foto de marco creado por valeria_aksakova - www.freepik.es</a>
-					</footer>
+		<footer>
+			<a href="https://www.freepik.com/free-photos-vectors/pattern" target="_blank">
+				<strong> Pattern vector created by freepik - www.freepik.com</strong>
+			</a>
+			<strong>
+				cons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  title="Flaticon" target="_blank">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+			</strong>
+			<a href="https://www.freepik.es/fotos-vectores-gratis/marco">Foto de marco creado por valeria_aksakova - www.freepik.es</a>
+		</footer>
 	</div>
 
 <!-- My Scripts -->
-	<script type="module" src="./scripts/main.js"></script>
+<script type="module" src="./scripts/main.js"></script>
 </body>
 </html>

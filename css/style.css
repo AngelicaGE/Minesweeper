@@ -195,14 +195,10 @@ td{
   margin-left: 30%;
 }
 .hidden{
-  visibility: hidden;
+  display: none;
 }
 .visible{
-  visibility: visible;
-}
-#welcomeMenu{
-  background-image: url(../media/start.png);
-  width: 100vh;
+  display: inline;
 }
 #welcomeMenu p{
 z-index: 1;
@@ -211,4 +207,7 @@ display: block;
 width: 50%;
 margin-left: auto;
 margin-right: auto;
+}
+#menuImg{
+  height: 95vh;
 }

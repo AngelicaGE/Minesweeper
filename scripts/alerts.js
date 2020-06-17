@@ -141,8 +141,8 @@ export default class Alerts{
     if( this.time != null){
        clearInterval(this.time);
        swal({
-        title: "Good luck next time!",
-        text: `dont give up`,
+        title: "Don´t give up!",
+        text: `Time played ${time}`,
         icon: `warning`,
         button: "Ok!",
       }); 

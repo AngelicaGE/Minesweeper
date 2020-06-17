@@ -9,6 +9,7 @@ export default class Menu{
      this.mySound = sound;
      this.map = map;
      this.amountMines=10;
+     this.initSound();
   }
 
   run(){}
@@ -47,9 +48,11 @@ export default class Menu{
   handleSoundClick(event){
     if (this.sound == true) { //turn off music and change speacker to the ugly one
       this.sound=false;
+      this.pauseSound()
       document.querySelector('.sound-hud').innerHTML = `<img id="sound" src="media/megaphone2.png" width="38px" height="38px">`;
     }else{ //turn music on and change speaker to the nice one
       this.sound = true;
+      this.initSound();
       document.querySelector('.sound-hud').innerHTML = `<img id="sound" src="media/megaphone.png" width="38px" height="38px">`;
     }
   }
@@ -67,7 +70,19 @@ export default class Menu{
   }
 
   initSound(){
-    this.mySound.play();
+    console.log("init sound");
+    try {
+      this.mySound.setVolume(100);
+      this.mySound.play();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  pauseSound(){
+    console.log("pause sound");
+    this.mySound.setVolume(100);
+    this.mySound.pause();
   }
 
 }

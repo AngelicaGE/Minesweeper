@@ -10,6 +10,7 @@ import Alerts from './alerts.js'
 export default class App{
   constructor(){
     this.mySound = this.initSound();
+    console.log(this.mySound);
     this.myPopSound1 = this.initPopSound(1);
     this.myPopSound2 = this.initPopSound(2);
     this.myPopSound3 = this.initPopSound(3);
@@ -41,14 +42,6 @@ export default class App{
     document.querySelector('.grid').addEventListener('contextmenu', (event) => {
               this.menu.changeFlagHUD(event)
     });
-        }
-
-  initSound(){
-    return new buzz.sound("./music/MUS_GamePlay_Loop1_AG_ArrozConPollo.wav", {
-      preload: true,
-      autoplay: true,
-      loop: true
-    });
   }
 
   updateTime(){
@@ -57,6 +50,14 @@ export default class App{
         console.log("game true");
         this.menu.updateTime();
       }
+    });
+  }
+
+  initSound(){
+    return new buzz.sound("./music/MUS_GamePlay_Loop1_AG_ArrozConPollo.wav", {
+      preload: true,
+      autoplay: true,
+      loop: true
     });
   }
 
@@ -95,6 +96,15 @@ export default class App{
           document.querySelector('#wholeGame').classList.add('visible');
           document.querySelector('#welcomeMenu').innerHTML = '';
           document.querySelector('#welcomeMenu').classList.add('hidden');
+         
+            console.log("init sound");
+            try {
+              this.mySound.setVolume(100);
+              this.mySound.play();
+            } catch (error) {
+              console.log(error);
+            }
+          
       }else if(event.keyCode == 13){
         swal("Game instructions!", `The object of the game of minesweeper is to locate all the mines as quickly as possible. Specifically, the game of minesweeper is won at the point when all squares that are not mines are clicked open.
 
@@ -117,7 +127,7 @@ export default class App{
 
   printMenu(){
     document.querySelector('#wholeGame').classList.add('hidden');
-    document.querySelector('#welcomeMenu').innerHTML = '<img src="./media/start.png" width="100%" height="1000px;">';
+    document.querySelector('#welcomeMenu').innerHTML = '<img id="menuImg" src="./media/start.png">';
   }
 
 }
