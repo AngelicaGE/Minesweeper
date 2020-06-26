@@ -91,7 +91,7 @@ export default class Map {
     for (let i = 0; i < tr; i++) {                                                       //table rows
       markup += `<tr class="">`;
       for (let j = 0; j < td; j++) {                                                      //table data
-        markup += `<td data-col="${j}" data-row="${i}" class="${level} notRev"></td>`
+        markup += `<td data-col="${j}" data-row="${i}" class="notRev ${level}"></td>`
         let cellAux = new Cell(i, j);                                                     //send row, col //I create a new cell and add it to my array of cells
         this.cellsArr.push(cellAux);                                                      //add the cell to my array of cells.
       }

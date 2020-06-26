@@ -64,38 +64,38 @@ export default class Alerts{
   getOneFruit(){  //returns an image tag with a different random food
     switch (Math.floor((Math.random() * 10) + 1)) {
       case 1:
-        return `<img src="media/apple.png" width="35px" height="35px">`;
+        return `<img src="media/apple.png" width="15px" height="15px">`;
       break;
       case 2:
-        return `<img src="media/banana.png" width="35px" height="35px">`;
+        return `<img src="media/banana.png" width="15px" height="15px">`;
       break;
       case 3:
-          return `<img src="media/carrot.png" width="35px" height="35px">`;
+          return `<img src="media/carrot.png" width="15px" height="15px">`;
       break;
       case 4:
-        return `<img src="media/chicken.png" width="35px" height="35px">`;
+        return `<img src="media/chicken.png" width="15px" height="15px">`;
       break;
       case 5:
-          return `<img src="media/hamburger.png" width="35px" height="35px">`;
+          return `<img src="media/hamburger.png" width="15px" height="15px">`;
       break;
       case 6:
-          return `<img src="media/lettuce.png" width="35px" height="35px">`;
+          return `<img src="media/lettuce.png" width="15px" height="15px">`;
       break;
       case 7:
-        return `<img src="media/orange.png" width="35px" height="35px">`;
+        return `<img src="media/orange.png" width="15px" height="15px">`;
       break;
       case 8:
-        return `<img src="media/pizza.png" width="35px" height="35px">`;
+        return `<img src="media/pizza.png" width="15px" height="15px">`;
       break;
       case 9:
-          return `<img src="media/steak.png" width="35px" height="35px">`;
+          return `<img src="media/steak.png" width="15px" height="15px">`;
       break;
       case 10:
-        return `<img src="media/tomato.png" width="35px" height="35px">`;
+        return `<img src="media/tomato.png" width="15px" height="15px">`;
       break;
-        return `<img src="media/apple.png" width="35px" height="35px">`;
+        return `<img src="media/apple.png" width="15px" height="15px">`;
       default:
-      return `<img src="media/apple.png" width="35px" height="35px">`; //If there happens some problem i just return an apple
+      return `<img src="media/apple.png" width="15px" height="15px">`; //If there happens some problem i just return an apple
     }
   }
 
