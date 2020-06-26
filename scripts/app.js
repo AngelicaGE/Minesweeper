@@ -10,13 +10,13 @@ import Alerts from './alerts.js'
 export default class App{
   constructor(){
     this.mySound = this.initSound();
-    console.log(this.mySound);
     this.myPopSound1 = this.initPopSound(1);
     this.myPopSound2 = this.initPopSound(2);
     this.myPopSound3 = this.initPopSound(3);
     this.alerts= new Alerts();//this.myPopSound1, this.myPopSound2, this.myPopSound3);
     this.map = new Map(this.alerts);
     this.menu = new Menu(this.map, this.mySound);
+    this.alerts.menu = this.menu;
     this.initMenuHandlers();
     this.initGridHandlers();
     this.printMenu();
@@ -38,6 +38,7 @@ export default class App{
     }
 
   }
+
   initGridHandlers(){
     document.querySelector('.grid').addEventListener('contextmenu', (event) => {
               this.menu.changeFlagHUD(event)
@@ -97,7 +98,6 @@ export default class App{
           document.querySelector('#welcomeMenu').innerHTML = '';
           document.querySelector('#welcomeMenu').classList.add('hidden');
          
-            console.log("init sound");
             try {
               this.mySound.setVolume(100);
               this.mySound.play();

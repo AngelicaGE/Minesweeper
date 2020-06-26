@@ -32,6 +32,13 @@ max-width: 900px;
 max-height:800px;
 display: flex;
 flex-direction: column;
+/*
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 70vh;
+    background-color: red;
+*/
 }
 .boardHard{ /*The whole game panel*/
 width: 1300px;
@@ -75,6 +82,19 @@ background-color: rgba(145, 229, 60, 1); /*green*/
 background-color: rgb(231,197,168); /*light pink*/
 }
 .easy{
+  
+  margin: 0;
+}
+.medium{
+ 
+  margin: 0;
+}
+.hard{
+ 
+  margin: 0;
+}
+/*
+.easy{
   width: 40px;
   height: 40px;
   max-height: 20px;
@@ -93,6 +113,7 @@ background-color: rgb(231,197,168); /*light pink*/
   max-height: 40px;
   margin: 0;
 }
+*/
 .notRev{
   background-color:rgba(255, 120, 24);/*71, 26, 26, 1);*/
   border-bottom: 4px solid rgba(116, 52, 52, 1);/*wine*/

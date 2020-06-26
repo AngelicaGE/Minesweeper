@@ -30,20 +30,50 @@ export default class Menu{
         if (event.target.id == "easy") { //w, h, tr, td, mines
             this.amountMines = 10;
             this.map.amountMines=10;
-            this.map.renderMineField(400, 400, 8, 8, this.amountMines, 1 );
+            this.map.renderMineField( 1 );
         } else if (event.target.id == "intermediate") {//w, h, tr, td, mines
             this.amountMines = 30;
             this.map.amountMines=30;
-           this.map.renderMineField( 466, 526, 16, 16, this.amountMines, 2);
+           this.map.renderMineField( 2);
         } else {                    //w, h, tr, td, mines
             this.amountMines = 40;
             this.map.amountMines=40;
-            this.map.renderMineField(700, 466, 16, 30, this.amountMines, 3 );
+            this.map.renderMineField(3 );
          }
          this.updateMinesHUD(0);
          this.map.initGridHandlers(); //If I dont add this line it wont detect the clicks when user changes the level
       }
   }
+
+  resetLevel(level){
+    document.querySelector(`.click`).className = "levels-item";
+
+    this.map.resetTime();
+    switch (level) {
+      case 1:
+        this.amountMines = 10;
+        this.map.amountMines=10;
+        this.map.renderMineField( 1 );
+        document.querySelector(`#easy`).className = "levels-item click";
+        break;
+      case 2:
+        this.amountMines = 30;
+        this.map.amountMines=30;
+       this.map.renderMineField( 2);
+       document.querySelector(`#medium`).className = "levels-item click";
+        break;
+      default:
+        this.amountMines = 40;
+        this.map.amountMines=40;
+        this.map.renderMineField(3 );
+        document.querySelector(`#hard`).className = "levels-item click";
+        break;
+    }
+    this.updateMinesHUD(0);
+    this.map.initGridHandlers(); //If I dont add this line it wont detect the clicks when user changes the level
+}
+
+
 
   handleSoundClick(event){
     if (this.sound == true) { //turn off music and change speacker to the ugly one

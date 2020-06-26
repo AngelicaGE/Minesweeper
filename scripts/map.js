@@ -5,20 +5,25 @@ export default class Map {
 
   constructor(alerts) 
   {
+    this.tableRow;                               // I initialize the rows with the small size. Because that is the default
+    this.tableData;                             // I initialize the columns with the small size. Because that is the default
+    this.state=["noClick", "firstClick", "nClick", "lose"];// state of the grid
+    this.time;                                    //keeps track of timer
+    this.amountMines;                        //mines on the grid
+    this.alerts = alerts;                        //Need alerts here because here is when i know when user wins or loses and alerts is the one that gives the retroalimentation
+    this.start();
+  }
+
+  start() {
     this.cellsArr = [];
     this.cellsArrBombs = [];
-    this.renderMineField(400, 400, 8, 8, 10, 1);          //width, height, tr, td, amount of mines
+    this.renderMineField( 1);          //width, height, tr, td, amount of mines
     this.initGridHandlers();                              //handle left and right click
     this.flags = 0;                                     // The amount of flags the user has put in the grid
     this.flagsInMines=0;                               // The counter of mines that have a flag on them.
-    this.tableRow = 8;                               // I initialize the rows with the small size. Because that is the default
-    this.tableData = 8;                             // I initialize the columns with the small size. Because that is the default
-    this.state=["noClick", "firstClick", "nClick", "lose"];// state of the grid
     this.startGame = this.state[0];               // start when user clicks a cell for the first game
-    this.time;                                    //keeps track of timer
-    this.amountMines = 10;                        //mines on the grid
     this.cellsRevealed = 0;                       //counter of cells that have been left clicked and have no mine on it
-    this.alerts = alerts;                        //Need alerts here because here is when i know when user wins or loses and alerts is the one that gives the retroalimentation
+
   }
 
   initGridHandlers() 
@@ -46,20 +51,40 @@ export default class Map {
   }
 
   //width, height, tr, td, amount of mines
-  renderMineField(w, h, tr, td, m, level)
+  renderMineField(level)
    {
     this.restartGame();           //restart all attributes
     /*boardclass has the exact px width and hight i ewant for each level so i need to know which level was clicked to resize the game. */
     let boardClass = "boardEasy";
+    let w;
+    let h;
+    let tr;
+    let td;
+    let m; 
     if (level == 1) {
       level = "easy";
       boardClass = "boardEasy";
+      w = 400;
+      h = 400;
+      tr = 8;
+      td = 8;
+      m = 10; 
     } else if (level == 2) {
       level = "medium";
       boardClass = "boardMedium";
+      w = 466;
+      h = 526;
+      tr = 16;
+      td = 16;
+      m = 30; 
     } else {
       level = "hard";
       boardClass = "boardHard";
+      w = 700;
+      h = 466;
+      tr = 16;
+      td = 30;
+      m = 40; 
     }
     document.querySelector("#board").classList = boardClass;
     var markup = `<table>`;
@@ -333,7 +358,7 @@ checkWin(){
   updateTime(){ //Alex helped me with this function
     console.log(this.startGame);
       var date = new Date();
-      var seconds=0;
+      var seconds=1;
       var printTime;
       this.time = setInterval(() =>{
         var aux = new Date().getTime(); //gives me the time for the first click obtains exact complete time

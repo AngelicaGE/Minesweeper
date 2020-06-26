@@ -12,6 +12,7 @@ export default class Alerts{
     this.myPopSound3=this.initPopSound(3);    //pop sound.
     this.time;                                //time that helps me pop food after some seconds
     this.i=0;                                 //to go through all the bomb elements. Made it global because i dont use a foor loop and i need to keep track of the index
+    this.menu;
   }
 
   printWin(time)
@@ -136,14 +137,20 @@ export default class Alerts{
 
   }
 
-  resetTime(time){
+  resetTime(){
     console.log("reset");
     if( this.time != null){
+      var a = document.querySelector('#timer').innerHTML;
       swal({
-        title: "Don´t give up!",
-        text: `Time played ${time} sec.`,
+        title: "Don´t give up! ddd",
+        text: `Time played: ${a} sec.`,
         icon: `warning`,
         button: "Ok!",
+        closeOnClickOutside: false,
+      }).then( () => {
+        console.log("close modal");
+        this.menu.resetLevel(1);
+
       }); 
       clearInterval(this.time);
     }
