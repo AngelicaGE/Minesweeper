@@ -62,40 +62,41 @@ export default class Alerts{
   }
 
   getOneFruit(){  //returns an image tag with a different random food
+    var imgClass = document.querySelector("#board").classList[0] + "Img";
+    console.log(imgClass);
     switch (Math.floor((Math.random() * 10) + 1)) {
       case 1:
-        return `<img src="media/apple.png" width="15px" height="15px">`;
+        return `<img src="media/steak.png"  class = "${imgClass} fruit">`;
       break;
       case 2:
-        return `<img src="media/banana.png" width="15px" height="15px">`;
+        return `<img src="media/banana.png"  class = "${imgClass} fruit">`;
       break;
       case 3:
-          return `<img src="media/carrot.png" width="15px" height="15px">`;
+          return `<img src="media/carrot.png"  class = "${imgClass} fruit">`;
       break;
       case 4:
-        return `<img src="media/chicken.png" width="15px" height="15px">`;
+        return `<img src="media/chicken.png"  class = "${imgClass} fruit">`;
       break;
       case 5:
-          return `<img src="media/hamburger.png" width="15px" height="15px">`;
+          return `<img src="media/hamburger.png"  class = "${imgClass} fruit">`;
       break;
       case 6:
-          return `<img src="media/lettuce.png" width="15px" height="15px">`;
+          return `<img src="media/lettuce.png"  class = "${imgClass} fruit">`;
       break;
       case 7:
-        return `<img src="media/orange.png" width="15px" height="15px">`;
+        return `<img src="media/orange.png"  class = "${imgClass} fruit">`;
       break;
       case 8:
-        return `<img src="media/pizza.png" width="15px" height="15px">`;
+        return `<img src="media/pizza.png"  class = "${imgClass} fruit">`;
       break;
       case 9:
-          return `<img src="media/steak.png" width="15px" height="15px">`;
+          return `<img src="media/steak.png"  class = "${imgClass} fruit">`;
       break;
       case 10:
-        return `<img src="media/tomato.png" width="15px" height="15px">`;
+        return `<img src="media/tomato.png"  class = "${imgClass} fruit">`;
       break;
-        return `<img src="media/apple.png" width="15px" height="15px">`;
       default:
-      return `<img src="media/apple.png" width="15px" height="15px">`; //If there happens some problem i just return an apple
+        return `<img src="media/apple.png"  class = "${imgClass} fruit">`; //If there happens some problem i just return an apple
     }
   }
 
@@ -142,7 +143,7 @@ export default class Alerts{
     if( this.time != null){
       var a = document.querySelector('#timer').innerHTML;
       swal({
-        title: "Don´t give up! ddd",
+        title: "Don´t give up!",
         text: `Time played: ${a} sec.`,
         icon: `warning`,
         button: "Ok!",

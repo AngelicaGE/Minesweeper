@@ -102,7 +102,7 @@ export default class Menu{
   initSound(){
     console.log("init sound");
     try {
-      this.mySound.setVolume(100);
+      this.mySound.setVolume(70);
       this.mySound.play();
     } catch (error) {
       console.log(error);
@@ -111,7 +111,7 @@ export default class Menu{
 
   pauseSound(){
     console.log("pause sound");
-    this.mySound.setVolume(100);
+    this.mySound.setVolume(70);
     this.mySound.pause();
   }
 

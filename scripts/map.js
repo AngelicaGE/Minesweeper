@@ -91,7 +91,7 @@ export default class Map {
     for (let i = 0; i < tr; i++) {                                                       //table rows
       markup += `<tr class="">`;
       for (let j = 0; j < td; j++) {                                                      //table data
-        markup += `<td data-col="${j}" data-row="${i}" class="notRev ${level}"></td>`
+        markup += `<td data-col="${j}" data-row="${i}" class="cell notRev ${level}"></td>`
         let cellAux = new Cell(i, j);                                                     //send row, col //I create a new cell and add it to my array of cells
         this.cellsArr.push(cellAux);                                                      //add the cell to my array of cells.
       }
@@ -335,7 +335,7 @@ checkWin(){
             this.alerts.printWin(cc);
           }
         }
-        event.target.innerHTML = `<img class="flag" data-col="${myEvent.getCol()}" data-row="${myEvent.getRow()}" src="media/flag.png" width="15px" ></img>`;     //add col and row so that i can retrieve them and know which cell was clicked
+        event.target.innerHTML = `<img class="flag" data-col="${myEvent.getCol()}" data-row="${myEvent.getRow()}" src="media/flag.png"" ></img>`;     //add col and row so that i can retrieve them and know which cell was clicked
       }
     }
    }

@@ -18,7 +18,6 @@ export default class App{
     this.menu = new Menu(this.map, this.mySound);
     this.alerts.menu = this.menu;
     this.initMenuHandlers();
-    this.initGridHandlers();
     this.printMenu();
     this.startGame();
   }
@@ -37,12 +36,6 @@ export default class App{
     });
     }
 
-  }
-
-  initGridHandlers(){
-    document.querySelector('.grid').addEventListener('contextmenu', (event) => {
-              this.menu.changeFlagHUD(event)
-    });
   }
 
   updateTime(){
@@ -99,7 +92,7 @@ export default class App{
           document.querySelector('#welcomeMenu').classList.add('hidden');
          
             try {
-              this.mySound.setVolume(100);
+              this.mySound.setVolume(70);
               this.mySound.play();
             } catch (error) {
               console.log(error);

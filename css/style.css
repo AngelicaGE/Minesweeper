@@ -9,6 +9,9 @@ align-items: center;
 font-family: 'Baloo Thambi', cursive;
 font-size: 30px;
 }
+#timer {
+  margin-left: 5px;
+}
 /*
 Easy 380 x 380
 cell --> 40 x 40  funct --> (8,8)
@@ -29,13 +32,13 @@ cell -->20 x 20 funct --> (16, 30)
 .boardMedium{ /*The whole game panel*/
   display: flex;
   flex-direction: column;
-  width: 480px;
+  width: 513px;
   margin-top: -20px;
 }
 .boardHard{ /*The whole game panel*/
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 961.6px;
   margin-top: -20px;
 }
 
@@ -77,11 +80,11 @@ height: 100%;
   height: 54px;
 }
 .medium{
- width: 26px;
- height: 26px;
+  min-width: 23px;
+  height: 26px;
 }
 .hard{
-  width: 26px;
+  min-width: 23px;
   height: 26px;
 }
 .notRev{
@@ -98,7 +101,39 @@ height: 100%;
   border-right: 1px solid rgba(116, 52, 52, 1);/*wine*/
   border-top: 4px solid rgba(116, 52, 52, 1);/*light wine*/
   border-left: 4px solid rgba(116, 52, 52, 1);/*light wine*/
+}
+
+.RevBomb, .Rev0, .Rev1, .Rev2, .Rev3, .Rev4, .Rev5, .Rev6, .Rev7, .Rev8{
   font-size: x-small;
+}
+
+.boardEasy .Rev0, .boardEasy .Rev1, .boardEasy .Rev2, .boardEasy .Rev3, 
+.boardEasy .Rev4, .boardEasy .Rev5, .boardEasy .Rev6, .boardEasy .Rev7, 
+.boardEasy .Rev8 {
+  font-size: 20px;
+}
+
+
+.boardEasyImg{
+  width: 25px;
+  height: 25px;
+}
+
+.boardMediumImg, .boardHardImg{
+  width: 15px;
+  height: 15px;
+}
+
+.fruit{
+  padding-left: 20%;
+}
+
+.cell{
+  cursor: pointer;
+}
+
+.notRev:hover{
+  opacity: 0.5;
 }
 
 .Rev1:before {
@@ -176,9 +211,7 @@ table{
 td{
   align-content: center;
 }
-.flag{
-  margin-left: 30%;
-}
+
 .hidden{
   display: none;
 }
@@ -195,4 +228,7 @@ margin-right: auto;
 }
 #menuImg{
   height: 95vh;
+}
+.flag{
+  width: 15px;
 }
