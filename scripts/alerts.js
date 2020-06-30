@@ -17,13 +17,17 @@ export default class Alerts{
 
   printWin(time)
   {
+    var a = document.querySelector('#timer').innerHTML;
+    document.querySelector("#grid").classList.add("noEvent")          //I dont let user reveal more cells if it has already won   //dont allow user to click 
     swal({                                                          //sweetmodal. retroalimentation after winning
        title: "Good job!",
-       text: `You finished in ${time} seconds`,
+       text: `You finished in ${a} seconds`,
        icon: "success",
        button: "Ok!",
-     });
-     document.querySelector("#grid").classList.add("noEvent")          //I dont let user reveal more cells if it has already won   //dont allow user to click 
+     }).then( () => {
+      console.log("close modal");
+      this.menu.resetLevel(1);
+    });
    }
  
    printLose(cellsArrBombs, time)
@@ -151,9 +155,9 @@ export default class Alerts{
       }).then( () => {
         console.log("close modal");
         this.menu.resetLevel(1);
-
       }); 
       clearInterval(this.time);
+      
     }
   }
 }

@@ -47,6 +47,8 @@ export default class Map {
     this.cellsArr = [];
     this.cellsArrBombs = [];
     this.cellsRevealed = 0;
+    this.flags = 0;                                     // The amount of flags the user has put in the grid
+    this.flagsInMines=0;                               // The counter of mines that have a flag on them.
     document.querySelector("#grid").classList.remove("noEvent"); //grid becomes clickable again  
   }
 
@@ -118,6 +120,7 @@ export default class Map {
       }
       this.cellAt(row, col).hasMine = true;   
       this.cellsArrBombs.push(this.cellAt(row, col));
+      console.log(`bomb ${i+1} at ${row}, ${col}`);
     }
   }
 
@@ -372,11 +375,13 @@ checkWin(){
   }
 
   resetTime(){
-    console.log("reset");
+    console.log("reset time");
     this.startGame= this.state[0];
     if( this.time != null){
        clearInterval(this.time);
     }
+    this.time=0;
+    document.querySelector('#timer').innerHTML = this.time;
   }
 
 }

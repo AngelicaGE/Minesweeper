@@ -69,7 +69,7 @@ export default class Menu{
         document.querySelector(`#hard`).className = "levels-item click";
         break;
     }
-    this.updateMinesHUD(0);
+    this.updateMinesHUD(0); // creo deberia enviar this.amountMines
     this.map.initGridHandlers(); //If I dont add this line it wont detect the clicks when user changes the level
 }
 
@@ -96,7 +96,7 @@ export default class Menu{
     }else{
     document.querySelector('#numberMines').innerHTML = '0'+ minesHUD;
     }
-    document.querySelector('#timer').innerHTML = '000';
+    //document.querySelector('#timer').innerHTML = '000';
   }
 
   initSound(){
