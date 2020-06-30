@@ -371,7 +371,6 @@ checkWin(){
           document.querySelector('#timer').innerHTML = seconds;
         }
       }, 1000);
-
   }
 
   resetTime(){

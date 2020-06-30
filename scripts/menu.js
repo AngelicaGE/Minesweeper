@@ -47,7 +47,6 @@ export default class Menu{
 
   resetLevel(level){
     document.querySelector(`.click`).className = "levels-item";
-
     this.map.resetTime();
     switch (level) {
       case 1:
@@ -114,7 +113,7 @@ export default class Menu{
     this.mySound.setVolume(70);
     this.mySound.pause();
   }
-
 }
+
 const menu= new Menu();
 menu.run();
